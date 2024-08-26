@@ -20,15 +20,17 @@ bool Grid::isWithinBounds(int row, int column)
     return false;
 }
 
-// void Grid::fillRandom()
-// {
-//     for(int row = 0; row < rows; row++) {
-//         for(int column = 0; column < columns; column++) {
-//             int randomValue  = GetRandomValue(0, 1);
-//             cells[rows][column] = randomValue;
-//         }
-//     }
-// }
+void Grid::fillRandom()
+{
+    for(int row = 0; row < rows; row++) {
+        for(int column = 0; column < columns; column++) {
+            int randomValue = GetRandomValue(1, 4);
+            cells[row] [column] = (randomValue == 4) ? 1 : 0;
+        }
+    }
+}
+
+
 
 void Grid::setValue(int row, int column, int value)
 {

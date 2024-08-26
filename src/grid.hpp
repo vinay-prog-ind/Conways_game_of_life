@@ -21,10 +21,10 @@ class Grid
         int getColumns() {
             return columns;
         }
-        // void fillRandom();
+        void fillRandom();
     private:
         int rows;
         int columns;
         int cellSize;
-    std::vector<std::vector<int>> cells;
+        std::vector<std::vector<int>> cells;
 };

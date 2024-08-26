@@ -35,15 +35,16 @@ int Simulation::countLiveNeighbors(int row, int column)
     return liveNeighbours;
 }
 
-void Simulation::update()
+void Simulation::Update()
 {
-    for(int row =0; row < grid.getRows(); row++) {
+    for(int row = 0; row < grid.getRows(); row++) {
         for(int column = 0; column < grid.getColumns(); column++) {
             int liveNeighbors = countLiveNeighbors(row, column);
             int cellValue = grid.getValue(row, column);
 
             if(cellValue == 1) {
-                if(liveNeighbors > 3 || liveNeighbors < 2) {
+                if(liveNeighbors > 3 || liveNeighbors < 2)
+                {
                     tempGrid.setValue(row, column, 0);
                 }
                 else {
@@ -51,15 +52,15 @@ void Simulation::update()
                 }
             }
             else {
-                if (liveNeighbors == 3)
-                {
+                if(liveNeighbors == 3) {
                     tempGrid.setValue(row, column, 1);
                 }
                 else {
                     tempGrid.setValue(row, column, 0);
                 }
-                
             }
         }
     }
+    grid = tempGrid;
 }
+
